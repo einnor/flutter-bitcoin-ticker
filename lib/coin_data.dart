@@ -49,5 +49,6 @@ class CoinData {
         throw 'Problem with the get request';
       }
     }
+    return cryptoPrices;
   }
 }
