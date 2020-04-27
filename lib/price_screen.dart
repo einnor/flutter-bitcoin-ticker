@@ -132,6 +132,12 @@ class CryptoCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 28.0),
+          child: Text(
+            '$cryptoCurrency = $value $selectedCurrency',
+          ),
+        ),
       ),
     );
   }
