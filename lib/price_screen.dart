@@ -85,6 +85,12 @@ class _PriceScreenState extends State<PriceScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
