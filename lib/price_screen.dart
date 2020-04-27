@@ -36,7 +36,7 @@ class _PriceScreenState extends State<PriceScreen> {
     return pickerItems;
   }
 
-  DropdownButton<String> getDropdownButton() {
+  DropdownButton<String> androidDropdown() {
     return DropdownButton<String>(
       value: selectedCurrency,
       items: getDropdownItems(),
