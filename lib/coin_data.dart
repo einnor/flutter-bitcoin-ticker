@@ -34,12 +34,20 @@ const List<String> cryptoList = [
 ];
 
 class CoinData {
-  Future<dynamic> getCoinData(String selectedCurrency) async {
+  Future<Map> getCoinData(String selectedCurrency) async {
     final url = '$baseURL/v1/exchangerate/BTC/$selectedCurrency?apikey=$apiKey';
-    http.Response response = await http.get(url);
-    if (response.statusCode == 200) {
-      String data = response.body;
-      return jsonDecode(data);
+
+    Map<String, String> cryptoPrices = {};
+    for (String crypto in cryptoList) {
+      http.Response response = await http.get(url);
+      if (response.statusCode == 200) {
+        String data = response.body;
+        var decodedData = jsonDecode(data);
+        double price = decodedData['rate'];
+        cryptoPrices[crypto] = price.toStringAsFixed(0);
+      } else {
+        throw 'Problem with the get request';
+      }
     }
   }
 }
