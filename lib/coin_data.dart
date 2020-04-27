@@ -34,8 +34,8 @@ const List<String> cryptoList = [
 ];
 
 class CoinData {
-  Future<dynamic> getCoinData() async {
-    const url = '$baseURL/v1/exchangerate/$crypto/$currency?apikey=$apiKey';
+  Future<dynamic> getCoinData(String selectedCurrency) async {
+    final url = '$baseURL/v1/exchangerate/BTC/$selectedCurrency?apikey=$apiKey';
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
       String data = response.body;
