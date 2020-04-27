@@ -34,11 +34,11 @@ const List<String> cryptoList = [
 ];
 
 class CoinData {
-  Future<Map> getCoinData(String selectedCurrency) async {
-    final url = '$baseURL/v1/exchangerate/BTC/$selectedCurrency?apikey=$apiKey';
-
+  Future getCoinData(String selectedCurrency) async {
     Map<String, String> cryptoPrices = {};
     for (String crypto in cryptoList) {
+      String url =
+          '$baseURL/v1/exchangerate/$crypto/$selectedCurrency?apikey=$apiKey';
       http.Response response = await http.get(url);
       if (response.statusCode == 200) {
         String data = response.body;
