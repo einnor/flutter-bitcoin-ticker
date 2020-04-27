@@ -114,3 +114,16 @@ class _PriceScreenState extends State<PriceScreen> {
     );
   }
 }
+
+class CryptoCard extends StatelessWidget {
+  const CryptoCard({this.value, this.selectedCurrency, this.cryptoCurrency});
+
+  final String value;
+  final String selectedCurrency;
+  final String cryptoCurrency;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
