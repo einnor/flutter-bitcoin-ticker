@@ -71,6 +71,19 @@ class _PriceScreenState extends State<PriceScreen> {
     return androidPicker();
   }
 
+  void getData() async {
+    isWaiting = true;
+    try {
+      var data = await CoinData().getCoinData(selectedCurrency);
+      isWaiting = false;
+      setState(() {
+        coinValues = data;
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
