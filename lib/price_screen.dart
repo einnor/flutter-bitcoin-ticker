@@ -55,7 +55,7 @@ class _PriceScreenState extends State<PriceScreen> {
       itemExtent: 32.0,
       onSelectedItemChanged: (selectedIndex) {
         setState(() {
-//                  selectedCurrency =
+          selectedCurrency = currenciesList[selectedIndex];
         });
       },
       children: getPickerItems(),
