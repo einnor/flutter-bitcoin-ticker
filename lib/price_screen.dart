@@ -11,7 +11,7 @@ class PriceScreen extends StatefulWidget {
 class _PriceScreenState extends State<PriceScreen> {
   Map<String, String> coinValues = {};
   bool isWaiting = false;
-  String selectedCurrency = 'USD';
+  String selectedCurrency = 'AUD';
 
   List<DropdownMenuItem> getDropdownItems() {
     List<DropdownMenuItem<String>> dropdownItems = [];
