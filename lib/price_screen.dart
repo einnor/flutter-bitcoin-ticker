@@ -48,6 +48,19 @@ class _PriceScreenState extends State<PriceScreen> {
     );
   }
 
+  CupertinoPicker iOSPicker() {
+    return CupertinoPicker(
+      backgroundColor: Colors.lightBlue,
+      itemExtent: 32.0,
+      onSelectedItemChanged: (selectedIndex) {
+        setState(() {
+//                  selectedCurrency =
+        });
+      },
+      children: getPickerItems(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,16 +97,7 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             padding: EdgeInsets.only(bottom: 30.0),
             color: Colors.lightBlue,
-            child: CupertinoPicker(
-              backgroundColor: Colors.lightBlue,
-              itemExtent: 32.0,
-              onSelectedItemChanged: (selectedIndex) {
-                setState(() {
-//                  selectedCurrency =
-                });
-              },
-              children: getPickerItems(),
-            ),
+            child: ,
           ),
         ],
       ),
